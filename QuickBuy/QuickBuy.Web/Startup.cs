@@ -1,26 +1,40 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SpaServices.AngularCli;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using QuickBuy.Repositorio.Repositorios.Contexto;
 
 namespace QuickBuy.Web
 {
     public class Startup
     {
+        public IConfiguration Configuration { get; }
+
         public Startup(IConfiguration configuration)
         {
-            Configuration = configuration;
-        }
+            var builder = new ConfigurationBuilder();
 
-        public IConfiguration Configuration { get; }
+            // Define arquivo de configuracao, define que arquivo sempre seja referenciado (optional = false),
+            // e sempre que houver atualizacao no arquivo ele deve ser atualizado (reloadOnChange = true).
+            builder.AddJsonFile("config.json", optional: false, reloadOnChange: true);
+
+            Configuration = builder.Build();
+        }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+
+            // Configura Conexao e a referencia do Projeto de configuracao do DBContext.
+            var connectionString = Configuration.GetConnectionString("MySQLConnection");
+            services.AddDbContext<QuickBuyContext>(option =>
+                                                    option.UseLazyLoadingProxies() // permite o carregamento de forma automatica dos relacionamentos entre as tabelas.
+                                                    .UseMySql(connectionString,
+                                                    m => m.MigrationsAssembly("QuickBuy.Repositorio")));
 
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>

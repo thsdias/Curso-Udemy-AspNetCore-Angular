@@ -1,12 +1,15 @@
-﻿using System.Linq;
+﻿using QuickBuy.Dominio.Enum;
+using System.Linq;
 
 namespace QuickBuy.Dominio.Entidades
 {
     public class Endereco : Entidade
     {
+        public int Id { get; set; }
+
         public string CEP { get; set; }
 
-        public string UF { get; set; }
+        public string Estado { get; set; }
 
         public string Cidade { get; set; }
 
@@ -16,6 +19,12 @@ namespace QuickBuy.Dominio.Entidades
 
         public string Complemento { get; set; }
 
+        public string Apelido { get; set; }
+
+        public int UsuarioId { get; set; }
+
+        public virtual Usuario Usuario { get; set; }
+
         public override void ValidaDados()
         {
             if (string.IsNullOrEmpty(CEP))
@@ -23,9 +32,9 @@ namespace QuickBuy.Dominio.Entidades
                 AdicionarMsgCritica("Informe o CEP do endereço.");
             }
 
-            if (string.IsNullOrEmpty(UF))
+            if (Estado.Equals(null))
             {
-                AdicionarMsgCritica("Informe o estado.");
+                AdicionarMsgCritica("Informe o nome do Estado.");
             }
 
             if (string.IsNullOrEmpty(Cidade))
@@ -36,11 +45,6 @@ namespace QuickBuy.Dominio.Entidades
             if (string.IsNullOrEmpty(Logradouro))
             {
                 AdicionarMsgCritica("Informe o logradouro.");
-            }
-
-            if (string.IsNullOrEmpty(Numero.ToString()))
-            {
-                AdicionarMsgCritica("Digite o número do endereço.");
             }
         }
     }

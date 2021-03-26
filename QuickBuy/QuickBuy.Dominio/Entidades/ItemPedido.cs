@@ -10,6 +10,10 @@ namespace QuickBuy.Dominio.Entidades
 
         public int Quantidade { get; set; }
 
+        public int PedidoId { get; set; }
+
+        public virtual Pedido Pedido { get; set; }
+
         public override void ValidaDados()
         {
             if(string.IsNullOrEmpty(Quantidade.ToString()))

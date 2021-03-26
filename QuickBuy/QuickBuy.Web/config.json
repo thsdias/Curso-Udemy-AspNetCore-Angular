@@ -1,0 +1,9 @@
+{
+  // * Obs: Alterar propriedade deste arquivo e definir: 'Copy to Output Directory = Copy Always' para garantir 
+  //         que ao compilar o projeto este arquivo seja encaminhado junto aos arquivos compilados.
+
+  "ConnectionStrings": {
+    "SQLServerConnection":  "",
+    "MySQLConnection": "server=localhost;uid=root;pwd=dbmaster;database=QuickBuyDB"
+  }
+}

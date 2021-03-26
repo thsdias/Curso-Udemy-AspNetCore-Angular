@@ -15,7 +15,9 @@ namespace QuickBuy.Dominio.Entidades
 
         public string SobreNome { get; set; }
 
-        public ICollection<Pedido> Pedidos { get; set; }
+        public virtual ICollection<Endereco> Enderecos { get; set; }
+
+        public virtual ICollection<Pedido> Pedidos { get; set; }
 
         public override void ValidaDados()
         {
@@ -39,6 +41,11 @@ namespace QuickBuy.Dominio.Entidades
             if (string.IsNullOrEmpty(Senha))
             {
                 AdicionarMsgCritica("A senha é obrigatória.");
+            }
+
+            if (!Enderecos.Any())
+            {
+                AdicionarMsgCritica("Dever ser informado ao menos 1 endereço para entregas.");
             }
         }
     }
