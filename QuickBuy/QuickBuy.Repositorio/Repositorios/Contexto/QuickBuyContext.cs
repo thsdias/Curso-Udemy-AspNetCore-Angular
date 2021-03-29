@@ -33,6 +33,13 @@ namespace QuickBuy.Repositorio.Repositorios.Contexto
             modelBuilder.ApplyConfiguration(new EnderecoConfiguracao());
             modelBuilder.ApplyConfiguration(new FormaPagamentoConfiguracao());
 
+            // Carga default na tabela Forma Pagamento.
+            modelBuilder.Entity<FormaPagamento>().HasData(
+                new FormaPagamento() { Id = 1, Nome = "Boleto", Descricao = "Forma de Pagamento do tipo Boleto." },
+                new FormaPagamento() { Id = 2, Nome = "Cartão de Crédito", Descricao = "Forma de Pagamento do tipo Cartão de Crédito." },
+                new FormaPagamento() { Id = 3, Nome = "Depósito", Descricao = "Forma de Pagamento do tipo Depósito." }
+            );
+
             base.OnModelCreating(modelBuilder);
         }
     }

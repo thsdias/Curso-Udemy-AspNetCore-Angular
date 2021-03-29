@@ -23,21 +23,19 @@ namespace QuickBuy.Repositorio.Repositorios.Config
             builder
                 .Property(u => u.Nome)
                 .IsRequired()
-                .HasMaxLength(50)
-                .HasColumnType("varchar");
+                .HasMaxLength(50);
 
             // Campo SobreNome.
             builder
                 .Property(u => u.SobreNome)
                 .IsRequired()
-                .HasMaxLength(50)
-                .HasColumnType("varchar");
+                .HasMaxLength(50);
 
             // Campo Senha.
             builder
                 .Property(u => u.Senha)
                 .IsRequired()
-                .HasMaxLength(400);
+                .HasMaxLength(250);
 
             // Campo Enderecos.
             builder
