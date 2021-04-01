@@ -26,6 +26,7 @@ Aprenda a construir e implantar sistemas Fullstack com Asp.Net Core e Angular
 
 ■ **Seção 4: Migrations**
 
+■ **Seção 5: Web API - Parte 1**
 
 
 <br/><br/>
@@ -94,3 +95,15 @@ Aprenda a construir e implantar sistemas Fullstack com Asp.Net Core e Angular
 |45. Analisando a Estrutura das Tabelas Criadas Na Base|
 |46. Carga Inicial na Tabela Forma Pagamento|
 |47. Resumo|
+
+
+| Seção 5: Web API - Parte 1 |
+| ------ |
+|48. Adicionando o Contexto ao Repositório|
+|49. Configurando o Produto Repositório Para Utilizar o Contexto|
+|50. Criando o Produto Controller|
+|51. Adicionando Métodos da WEB API|
+|52. Postman - A Ferramenta Para Testar Nossa WEB API|
+|53. Primeiro Teste com o WEB API|
+|54. Testando pelo Postman|
+|55. Adicionando Novo Produto Através da WEB API|
