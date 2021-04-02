@@ -28,6 +28,7 @@ Aprenda a construir e implantar sistemas Fullstack com Asp.Net Core e Angular
 
 ■ **Seção 5: Web API - Parte 1**
 
+■ **Seção 6: Angular - Estrutura de Projeto**
 
 <br/><br/>
 <br/><br/>
@@ -107,3 +108,23 @@ Aprenda a construir e implantar sistemas Fullstack com Asp.Net Core e Angular
 |53. Primeiro Teste com o WEB API|
 |54. Testando pelo Postman|
 |55. Adicionando Novo Produto Através da WEB API|
+
+
+| Seção 6: Angular - Estrutura de Projeto |
+| ------ |
+|56. Prévia|
+|57. Diferenças entre Front-End e Back-End|
+|58. O que é Angular?|
+|59. Apresentando a Estrutura de Pastas do Angular|
+|60. Arquivo de Configuração Angular.json|
+|61. Arquivos Package e TsConfig|
+|62. Estrutura da pasta src ( Source Code)|
+|63. Pasta APP|
+|64. O que é TypeScript?|
+|65. Primeiros Passos com TypeScript|
+|66. Criando o primeiro Componente Em Angular|
+|67. Entendendo sobre o Decorator Component|
+|68. Adicionando O Primeiro Componente|
+|69. Renderização das Páginas|
+|70. Nagevação das páginas|
+|71. Adicionando Componente do Produto na Navegação|
