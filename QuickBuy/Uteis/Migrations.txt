@@ -1,0 +1,26 @@
+
+Migrations:
+
+1 - Acessar Package Manager Console
+2 - Definir projeto Repositorio
+3 - Executar comando para incluir o histórico e o nome do ponto de controle.
+  3.1 - Add-Migration PrimeiraVersaoDB
+
+
+Enviando/Realizando alterações no DB:
+
+1 - Acessar Package Manager Console
+2 - Executar cmd Update-Database -Verbose
+
+
+Preenchendo tabela com dados default:
+
+1 - Gerar o código com os dados a serem inseridos na classe de contexto ou relacionadas.
+2 - Acessar Package Manager Console
+3 - Executar comando para incluir o histórico e o nome do ponto de controle.
+4 - Executar cmd Update-Database -Verbose
+
+
+
+> Ao executar o Migrations, validar a nova pasta criada no diretório, contendo as informações
+  que serão executadas no BD.

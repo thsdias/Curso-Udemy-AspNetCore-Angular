@@ -1,0 +1,24 @@
+* Link oficial do projeto no Github:
+- https://github.com/leonardosouza35/QuickBuy
+
+
+* Inicializar projeto Angular fora do VS.
+    - Alterar arquivo Startup.cs
+    - Metodo Configure()
+    - Trecho a ser alterado:
+        app.UseSpa(spa =>
+        {
+            // To learn more about options for serving an Angular SPA from ASP.NET Core,
+            // see https://go.microsoft.com/fwlink/?linkid=864501
+
+            spa.Options.SourcePath = "ClientApp";
+
+            if (env.IsDevelopment())
+            {
+                // Inicializa projeto angular ao executar projeto no VS.
+                //spa.UseAngularCliServer(npmScript: "start");
+
+                // Inicializa projeto angular fora do VS.
+                spa.UseProxyToSpaDevelopmentServer("http://localhost:4200/");
+            }
+        });

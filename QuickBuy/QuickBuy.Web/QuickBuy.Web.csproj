@@ -25,6 +25,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\src\app\autorizacao\valida.rotas.ts" />
+    <None Remove="ClientApp\src\app\model\usuario.ts" />
+    <None Remove="ClientApp\src\app\usuario\login\login.component.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\QuickBuy.Repositorio\QuickBuy.Repositorio.csproj" />
   </ItemGroup>
 
@@ -32,6 +38,17 @@
     <Content Update="config.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="ClientApp\src\app\usuario\cadastro\" />
+    <Folder Include="ClientApp\src\assets\img\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\src\app\autorizacao\valida.rotas.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\model\usuario.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\usuario\login\login.component.ts" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

@@ -30,6 +30,8 @@ Aprenda a construir e implantar sistemas Fullstack com Asp.Net Core e Angular
 
 ■ **Seção 6: Angular - Estrutura de Projeto**
 
+■ **Seção 7: Angular - Template**
+
 <br/><br/>
 <br/><br/>
 
@@ -128,3 +130,31 @@ Aprenda a construir e implantar sistemas Fullstack com Asp.Net Core e Angular
 |69. Renderização das Páginas|
 |70. Nagevação das páginas|
 |71. Adicionando Componente do Produto na Navegação|
+
+
+|Seção 7: Angular - Template|
+| ------ |
+|72. Criando o Componente Login|
+|73. Sintaxe de Template|
+|74. Criando a Classe do Componente de Login|
+|75. Apresentando o Bootstrap|
+|76. Criando o template de Login|
+|77. Ajustando a Tela de Login|
+|78. Binding -Interpolação de String|
+|79. Binding para Atributo HTML (Property Binding)|
+|80. Binding Para Eventos|
+|81. Binding de Ida-e-Volta( Two Way)|
+|82. Definindo Modelo Usuario|
+|83. Diretiva Estrutural NgIf|
+|84. Diretiva Estrutural NgFor|
+|85. Intro de Validação Template Driven|
+|86. Implementação da Validação com Template Driven|
+|87. Entendendo o problema de arquivo fora do padrão UTF-8|
+|88. Resolvendo Problema do Visual Studio com arquivos UTF-8|
+|89. Validação com a Diretiva ngClass|
+|90. Entendendo e criando um Guarda de Rotas|
+|91. Configurando o GuardaRotas no Módulo Principal|
+|92. Controlando o Acesso com o Guarda Rotas|
+|93. Entendendo o Web Storage|
+|94. Login com Session Storage e o botão Sair|
+|95. Redirecionamento Correto na Autenticação|
