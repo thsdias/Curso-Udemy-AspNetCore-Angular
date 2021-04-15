@@ -18,7 +18,7 @@
     <label for="inputSenha" class="sr-only">Senha</label>
     <input type="password" name="senha" id="inputSenha" placeholder="Senha"
            class="form-control mb-2" #senha="ngModel" required
-           [(ngModel)]="usuario.senha"  [ngClass]="{
+           [(ngModel)]="usuario.senha" [ngClass]="{
               'is-invalid': senha.invalid && (senha.dirty || senha.touched),
               'is-valid': senha.valid && (senha.dirty || senha.touched)
            }" />
@@ -26,7 +26,16 @@
       <div *ngIf="senha.invalid"><p>* Campo senha é obrigatório</p></div>
     </div>
 
-    <button class="btn btn-primary btn-block" type="submit" (click)="login()">Entrar</button>
+    <div class="alert alert-danger" *ngIf="mensagem">
+      {{ mensagem }}
+    </div>
+
+    <!--<button class="btn btn-primary btn-block" type="submit" (click)="login()">Entrar</button>-->
+    <button class="btn btn-primary btn-block" type="submit" (click)="login()" [disabled]="_ativarSpinner">
+      <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" *ngIf="_ativarSpinner"></span>
+      Entrar
+    </button>
+
     <img src="../../../assets/img/logo.jpg" />
   </form>
 </div>

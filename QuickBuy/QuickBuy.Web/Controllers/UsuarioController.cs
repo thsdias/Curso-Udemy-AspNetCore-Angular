@@ -8,19 +8,18 @@ namespace QuickBuy.Web.Controllers
     [Route("api/[controller]")]
     public class UsuarioController : Controller
     {
-        readonly IUsuarioRepositorio _usuarioRepositorio;
-
+        private readonly IUsuarioRepositorio _usuarioRepositorio;
         public UsuarioController(IUsuarioRepositorio usuarioRepositorio)
         {
             _usuarioRepositorio = usuarioRepositorio;
         }
 
-        [HttpGet("ObterPorId")]
-        public IActionResult ObterPorId(int id)
+        [HttpGet]
+        public ActionResult ObterUsuarios()
         {
             try
             {
-                return Json(_usuarioRepositorio.ObterPorId(id));
+                return Ok();
             }
             catch (Exception ex)
             {
@@ -28,69 +27,19 @@ namespace QuickBuy.Web.Controllers
             }
         }
 
-        [HttpGet("ObterTodos")]
-        public IActionResult ObterTodos()
+        [HttpPost("VerificarUsuario")]
+        public ActionResult ObterUsuario([FromBody] Usuario usuario)
         {
             try
             {
-                return Json(_usuarioRepositorio.ObterTodos());
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.ToString());
-            }
-        }
+                var usuarioRetorno = _usuarioRepositorio.Obter(usuario.Email, usuario.Senha);
 
-        [HttpPost("Incluir")]
-        public IActionResult Incluir([FromBody]Usuario usuario)
-        {
-            try
-            {
-                usuario.ValidaDados();
-
-                if (!usuario.Valido)
+                if(usuarioRetorno != null)
                 {
-                    return BadRequest(usuario.ObterMensagensValidacao());
+                    return Ok(usuarioRetorno);
                 }
 
-                if (usuario.Id > 0)
-                {
-                    _usuarioRepositorio.Atualizar(usuario);
-                }
-                else
-                {
-                    _usuarioRepositorio.Adicionar(usuario);
-                }
-
-                return Created("api/usuario", usuario);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.ToString());
-            }
-        }
-
-        [HttpPut("Atualizar")]
-        public IActionResult Atualizar([FromBody]Usuario usuario)
-        {
-            try
-            {
-                _usuarioRepositorio.Atualizar(usuario);
-                return Json(_usuarioRepositorio.ObterPorId(usuario.Id));
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.ToString());
-            }
-        }
-
-        [HttpDelete("Remover")]
-        public IActionResult Remover([FromBody]Usuario usuario)
-        {
-            try
-            {
-                _usuarioRepositorio.Remover(usuario);
-                return Json(_usuarioRepositorio.ObterTodos());
+                return BadRequest("Usuário ou senha inválido");
             }
             catch (Exception ex)
             {

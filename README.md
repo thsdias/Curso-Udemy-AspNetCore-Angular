@@ -32,6 +32,8 @@ Aprenda a construir e implantar sistemas Fullstack com Asp.Net Core e Angular
 
 ■ **Seção 7: Angular - Template**
 
+■ **Seção 8: Angular - Serviços**
+
 <br/><br/>
 <br/><br/>
 
@@ -158,3 +160,25 @@ Aprenda a construir e implantar sistemas Fullstack com Asp.Net Core e Angular
 |93. Entendendo o Web Storage|
 |94. Login com Session Storage e o botão Sair|
 |95. Redirecionamento Correto na Autenticação|
+
+
+| Seção 8: Angular - Serviços |
+| ------ |
+|96. Orientações|
+|97. Criação de Pasta e Arquivos de Serviço|
+|98. Imports Necessários Para Criar Um Serviço|
+|99. Publicando o serviço na Injecão de Dependência do Angular|
+|100. Adicionando Método No Serviço de Usuario|
+|101. Padrão Observador Para Iniciantes|
+|102. Injectar Usuario Serviço no Login Component|
+|103. Criar UsuarioController no ASP.NET Core|
+|104. Chamando o ASP.NET Core a partir do Angular|
+|105. Exibindo Mensagem Retornada pelo ASP.NET Core|
+|106. Injecão de UsuarioServico No GuardaRotas e Componente de Navegação|
+|107. Controlar Session Storage com UsuarioServico|
+|108. Injetando UsuarioRepository no UsuarioController|
+|109. Criando método no UsuarioRepository para Verificar Conta de Usuario|
+|110. Inserindo Novo Usuário na Base De Dados|
+|111. Conhecendo o Free Remote MySQL|
+|112. Utilizando a classe Spinners do Bootstrap no Botão Entrar|
+|113. Limpando as Referências do Projeto|

@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core"
 import { Usuario } from "../../model/usuario"
 import { ActivatedRoute, Router } from "@angular/router"
+import { UsuarioService } from "../../service/usuario/usuario.service";
 
 @Component({
   selector: "app-login",
@@ -10,8 +11,11 @@ import { ActivatedRoute, Router } from "@angular/router"
 export class LoginComponent implements OnInit {
   public usuario;
   public returnUrl: string;
+  public mensagem: string;
+  private _ativarSpinner: Boolean;
 
-  constructor(public router: Router, private activateRouter: ActivatedRoute) {    
+  constructor(public router: Router, private activateRouter: ActivatedRoute, private usuarioService: UsuarioService)
+  { 
   }
 
   ngOnInit(): void {
@@ -20,9 +24,22 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    if (this.usuario.email == "teste@email.com" && this.usuario.senha == "abc123") {
-      sessionStorage.setItem('usuario-autenticado', '1');
-      this.router.navigate([this.returnUrl]);  // redireciona para a rota raiz.
-    }
+    this._ativarSpinner = true;
+    this.usuarioService.verificarUsuario(this.usuario).subscribe(
+      data => {
+        this.usuarioService.usuario = data;
+
+        if (this.returnUrl == null) {
+          this.router.navigate(['/']);  // retorna para a pagina raiz/principal.
+        } else {
+          this.router.navigate([this.returnUrl]);
+        }
+      },
+      erro => {
+        console.log(erro.error);
+        this.mensagem = erro.error;
+        this._ativarSpinner = false;
+      }
+    );
   }
 }
