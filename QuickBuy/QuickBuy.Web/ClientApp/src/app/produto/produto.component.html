@@ -1,3 +1,49 @@
-<p>
-  <b>Produto: </b>{{ obterNome() }}
-</p>
+<p class="h4 mb-4 titulo">Cadastro de Produto</p>
+
+<!--Nome--> 
+<label for="inputNome" class="sr-only">Nome</label>
+<input type="text" id="inputNome" name="nomeProduto" placeholder="Nome do Produto"
+       class="form-control col-md-4 mb-2" [(ngModel)]="produto.nome"
+       [ngClass]="{
+        'is-invalid': nome.invalid && (nome.dirty || nome.touched),
+        'is-valid': nome.invalid && (nome.dirty || nome.touched)
+       }"
+       #nome="ngModel" required />
+<div class="invalid-feedback mb-2" *ngIf="nome.invalid && (nome.dirty || nome.touched)">
+  <div *ngIf="nome.errors.required">* Nome do Produto é de preenchimento obrigatório</div>
+</div>
+
+<!--Descricao-->
+<label for="inputDescricao" class="sr-only">Descrição</label>
+<input type="text" id="inputDescricao" name="descricaoProduto" placeholder="Descrição do Produto"
+       class="form-control col-md-4 mb-2" [(ngModel)]="produto.descricao"
+       [ngClass]="{
+        'is-invalid': descricao.invalid && (descricao.dirty || descricao.touched),
+        'is-valid': descricao.invalid && (descricao.dirty || descricao.touched)
+       }"
+       #descricao="ngModel" required />
+<div class="invalid-feedback mb-2" *ngIf="descricao.invalid && (descricao.dirty || descricao.touched)">
+  <div *ngIf="descricao.errors.required">* Descrição do Produto é de preenchimento obrigatório</div>
+</div>
+
+<!--Preco-->
+<label for="inputPreco" class="sr-only">Preço</label>
+<input type="number" id="inputPreco" name="precoProduto" placeholder="Preço"
+       class="form-control col-md-2 mb-2" [(ngModel)]="produto.preco"
+       [ngClass]="{
+        'is-invalid': preco.invalid && (preco.dirty || preco.touched),
+        'is-valid': preco.invalid && (preco.dirty || preco.touched)
+       }"
+       #preco="ngModel" required />
+<div class="invalid-feedback mb-2" *ngIf="preco.invalid && (preco.dirty || preco.touched)">
+  <div *ngIf="preco.errors.required">* Preço do Produto é obrigatório</div>
+</div>
+
+<div class="input-group mb-2">
+  <div class="custom-file col-md-4">
+    <input type="file" id="inputFile" class="custom-file-input" />
+    <label for="inputFile" class="custom-file-label">Selecione a imagem do produto</label>
+  </div>
+</div>
+
+<button class="btn btn-primary btn-block" type="submit" (click)="cadastrar()">Cadastrar</button>

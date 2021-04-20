@@ -26,9 +26,11 @@
 
   <ItemGroup>
     <None Remove="ClientApp\src\app\autorizacao\valida.rotas.ts" />
+    <None Remove="ClientApp\src\app\model\produto.ts" />
     <None Remove="ClientApp\src\app\model\usuario.ts" />
     <None Remove="ClientApp\src\app\service\produto\produto.service.ts" />
     <None Remove="ClientApp\src\app\service\usuario\usuario.service.ts" />
+    <None Remove="ClientApp\src\app\usuario\cadastro\cadastro.usuario.component.ts" />
     <None Remove="ClientApp\src\app\usuario\login\login.component.ts" />
   </ItemGroup>
 
@@ -43,15 +45,16 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="ClientApp\src\app\usuario\cadastro\" />
     <Folder Include="ClientApp\src\assets\img\" />
   </ItemGroup>
 
   <ItemGroup>
     <TypeScriptCompile Include="ClientApp\src\app\autorizacao\valida.rotas.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\model\produto.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\model\usuario.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\service\produto\produto.service.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\service\usuario\usuario.service.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\usuario\cadastro\cadastro.usuario.component.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\usuario\login\login.component.ts" />
   </ItemGroup>
 

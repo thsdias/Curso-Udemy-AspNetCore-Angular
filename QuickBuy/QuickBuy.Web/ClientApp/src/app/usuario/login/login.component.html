@@ -1,6 +1,6 @@
 <div class="text-center">
   <form class="form-signin">
-    <p class="h4 mb-2 login">Login do Cliente</p>
+    <p class="h4 mb-4 login">Login do Cliente</p>
 
     <label for="inputEmail" class="sr-only">Email</label>
     <input type="email" name="email" id="inputEmail" placeholder="Informe seu Email"
@@ -35,6 +35,9 @@
       <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" *ngIf="_ativarSpinner"></span>
       Entrar
     </button>
+    <div>
+      Novo usuário? <a [routerLink]='["/cadastro-usuario"]'>Cadastre-se</a>
+    </div>
 
     <img src="../../../assets/img/logo.jpg" />
   </form>

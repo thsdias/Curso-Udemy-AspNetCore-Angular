@@ -182,3 +182,22 @@ Aprenda a construir e implantar sistemas Fullstack com Asp.Net Core e Angular
 |111. Conhecendo o Free Remote MySQL|
 |112. Utilizando a classe Spinners do Bootstrap no Botão Entrar|
 |113. Limpando as Referências do Projeto|
+
+
+| Seção 9: Angular Template (Módulo de Usuário e Produto) |
+| ------ |
+|114. Adicionando Arquivos do Angular Para Cadastro de Usuário|
+|115. Criando e Configurando Componente de Cadastro de Usuário|
+|116. Injetando o serviço no CadastroComponent|
+|117. Implementação de método no Serviço para Cadastrar Usuario|
+|118. Construindo o Templade do Cadastro de Produto|
+|119. Finalizando Template Cadastro de Usuário|
+|120. Iniciando o Cadastro de Produto|
+|121. Criando Serviço de Produto|
+|122. Implementando o Serviço de Produto|
+|123. Injetando o Serviço de Produto|
+|124. Desativando Temporariamente o Controle de Acesso ao Módulo de Produto|
+|125. Template de Produto - Primeira Parte|
+|126. Adicionando Os Campos Template de Produto|
+|127. Componente Upload de Arquivo - Primeira Parte|
+|128. Validação de Template Tela de Produto|
