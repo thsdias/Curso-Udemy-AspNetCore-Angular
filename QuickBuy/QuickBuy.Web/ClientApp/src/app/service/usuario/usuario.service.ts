@@ -34,7 +34,7 @@ export class UsuarioService
   }
 
   public verificarUsuario(usuario: Usuario): Observable<Usuario> { 
-    return this.http.post<Usuario>(this._baseUrl + "api/usuario/verificarusuario", JSON.stringify(usuario), { headers: this.headers });
+    return this.http.post<Usuario>(this._baseUrl + "api/usuario/verificarUsuario", JSON.stringify(usuario), { headers: this.headers });
   }
 
   public cadastrar(usuario: Usuario): Observable<Usuario> {
@@ -50,7 +50,10 @@ export class UsuarioService
     return this.http.post<Usuario>(this._baseUrl + "api/usario", body, { headers });
     */
 
-    return this.http.post<Usuario>(this._baseUrl + "api/usario", JSON.stringify(usuario), { headers: this.headers });
+    console.log('acesso metodo Cadastrar.ts');
+    console.log(usuario);
+
+    return this.http.post<Usuario>(this._baseUrl + "api/usuario/cadastrarUsuario", JSON.stringify(usuario), { headers: this.headers });
   }
 
   public limparSessao() {

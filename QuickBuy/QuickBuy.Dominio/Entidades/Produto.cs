@@ -12,6 +12,8 @@ namespace QuickBuy.Dominio.Entidades
 
         public decimal Preco { get; set; }
 
+        public string NomeArquivo { get; set; }
+
         public override void ValidaDados()
         {
             if (string.IsNullOrEmpty(Nome))
@@ -24,9 +26,9 @@ namespace QuickBuy.Dominio.Entidades
                 AdicionarMsgCritica("A descrição do produto deve ser informada.");
             }
 
-            if (string.IsNullOrEmpty(Preco.ToString()))
+            if (Preco <= 0)
             {
-                AdicionarMsgCritica("O preco do produto deve ser informado");
+                AdicionarMsgCritica("O preco do produto deve ser informado.");
             }
         }
     }

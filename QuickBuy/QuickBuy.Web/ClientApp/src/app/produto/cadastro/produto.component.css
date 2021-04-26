@@ -1,7 +1,9 @@
-.titulo {
-  color: #8b8c8e;
-}
+@import url(../../app.component.css);
 
 .custom-file-input:lang(en) ~ .custom-file-label::after {
   content: "Selecionar";
+}
+
+.mensagem {
+    white-space: pre-line;
 }

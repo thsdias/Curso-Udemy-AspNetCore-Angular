@@ -11,6 +11,10 @@ export class NavMenuComponent
 {
   isExpanded = false;
 
+  get usuario() {
+    return this.usuarioService.usuario;
+  }
+
   constructor(private router: Router, private usuarioService: UsuarioService) {
   }
 

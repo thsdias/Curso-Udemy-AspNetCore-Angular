@@ -1,0 +1,18 @@
+@import url(../../app.component.css);
+
+.tbl-col-preco,
+.tbl-col-imagem {
+  width: 12%;
+}
+
+.tbl-col-imagem {
+  text-align: center;
+}
+
+.img-produto {
+  width: 60%;
+}
+
+.btn-warning {
+  color: white;
+}

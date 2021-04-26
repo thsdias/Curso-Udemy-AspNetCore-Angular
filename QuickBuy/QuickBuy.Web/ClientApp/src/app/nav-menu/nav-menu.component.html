@@ -9,14 +9,23 @@
       <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse" [ngClass]='{"show": isExpanded}'>
         <ul class="navbar-nav flex-grow">
           <li class="nav-item" [routerLinkActive]='["link-active"]'>
-            <a class="nav-link text-dark" [routerLink]='["/produto"]'>Produto</a>
+            <a class="nav-link text-dark" [routerLink]='["/pesquisa-produto"]'>Produto</a>
           </li>
           <li class="nav-item" [routerLinkActive]='["link-active"]' *ngIf="!usuarioLogado()">
             <a class="nav-link text-dark" [routerLink]='["/login"]'>Login</a>
           </li>
-          <li class="nav-item" [routerLinkActive]='["link-active"]' *ngIf="usuarioLogado()">
-            <a class="nav-item nav-link text-dark" [routerLink]='["/logout"]' (click)="sair()">Logout</a>
+          <li class="nav-item dropdown" *ngIf="usuarioLogado()">
+            <a class="nav-link text-dark dropdown-toggle" href="#" role="button" aria-haspopup="true" aria-expanded="false"
+               id="linkLogout" data-toggle="dropdown">
+              {{ usuario.nome }}
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="linkLogout">
+              <li class="dropdown-item font-weight-bold" role="menu" [routerLink]='["/logout"]' (click)="sair()">Logout</li>
+            </ul>
           </li>
+          <!--<li class="nav-item" [routerLinkActive]='["link-active"]' *ngIf="usuarioLogado()">
+            <a class="nav-item nav-link text-dark" [routerLink]='["/logout"]' (click)="sair()">Logout</a>
+          </li>-->
         </ul>
       </div>
     </div>

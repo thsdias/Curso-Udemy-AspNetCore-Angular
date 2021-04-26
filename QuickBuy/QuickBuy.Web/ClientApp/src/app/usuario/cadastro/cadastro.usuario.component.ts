@@ -10,9 +10,11 @@ import { UsuarioService } from "../../service/usuario/usuario.service";
 export class CadastroUsuarioComponent implements OnInit
 {
   public usuario: Usuario;
+  public mensagem: string;
+  public ativarSpinner: boolean;
+  public usuarioCadastrado: boolean;
 
   constructor(private usuarioService: UsuarioService) {
-
   }
 
   ngOnInit(): void {
@@ -20,11 +22,17 @@ export class CadastroUsuarioComponent implements OnInit
   }
 
   public cadastrar() {
-    this.usuarioService
-      .cadastrar(this.usuario)
-      .subscribe(
-        usuario => { },
-        err => { }
-      );
+    this.ativarSpinner = true;
+    this.usuarioService.cadastrar(this.usuario).subscribe(
+      usuario => {
+        this.usuarioCadastrado = true;
+        this.mensagem = "Usuário cadastrado com sucesso!";
+        this.ativarSpinner = false;
+      },
+      err => {
+        this.mensagem = "Erro ao cadastrar usuário!";
+        this.ativarSpinner = false;
+      }      
+    );
   }
 }

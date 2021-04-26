@@ -21,7 +21,7 @@ namespace QuickBuy.Dominio.Entidades
 
         public string ObterMensagensValidacao()
         {
-            return string.Join(". ", MensagemValidacao);
+            return string.Join("\n", MensagemValidacao);
         }
 
         protected void AdicionarMsgCritica(string mensagem)

@@ -201,3 +201,31 @@ Aprenda a construir e implantar sistemas Fullstack com Asp.Net Core e Angular
 |126. Adicionando Os Campos Template de Produto|
 |127. Componente Upload de Arquivo - Primeira Parte|
 |128. Validação de Template Tela de Produto|
+
+
+| Seção 10: Web API - Parte 2 |
+| ------ |
+|129. Preparando a tela de Cadastro de Usuário|
+|130. Simplificando método UsuarioServiço|
+|131. Novo método na WEB API para Cadastrar novo Usuário|
+|132. Realizando Testes Integrados - Cadastro de Usuario|
+|133. Exibir Informação sobre Usuario Logado|
+|134. Upload de Arquivo - Continuação|
+|135. Upload de Arquivo - Evento de Template e Serviço|
+|136. Upload de Arquivo - Contexto da Requisição|
+|137. Upload de Arquivo - Método API para EnviarArquivo|
+|138. Upload de Arquivo - Debugando|
+|139. Upload de Arquivo - Lendo o nome do arquivo da Web API|
+|140. Mapeamento de NomeArquivo no EF Core|
+|141. Continuação Validação de Template Cadastro de Produto|
+|142. Validação de Produdo na Web API|
+|143. Alterando Mapeamento da Propriedade Preco(Produto)|
+|144. Ativando a Espera(Spinner) no Cadastro de Produto e o Primeiro Teste|
+|145. Teste - Salvando o produto com a imagem|
+|146. Primeiros Passos para Adicionar Funcionalidade Pesquisa de Produtos|
+|147. Adicionando Chamada Web API Na Pesquisa de Produtos|
+|148. Implementando Template Pesquisa de Produtos|
+|149. Redirecionamento Pesquisa e Cadastro de Produtos|
+|150. Deletando um Produto|
+|151. Editando um Produto|
+|152. Cancelando o Cadastro de Produto|

@@ -28,6 +28,11 @@ namespace QuickBuy.Repositorio.Repositorios.Config
                 .Property(p => p.Preco)
                 .IsRequired()
                 .HasColumnType("decimal(18,2)");
+
+            // Campo NomeArquivo.
+            builder
+                .Property(p => p.NomeArquivo)
+                .HasMaxLength(50);
         }
     }
 }

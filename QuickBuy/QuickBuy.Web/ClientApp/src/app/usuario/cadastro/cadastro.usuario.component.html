@@ -2,6 +2,10 @@
   <form class="form-signin">
     <p class="h4 mb-4 login">Novo Usuário</p>
 
+    <div class="alert alert-danger mb-3" *ngIf="mensagem && !usuarioCadastrado">
+      {{ mensagem }}
+    </div>
+
     <!--Email-->
     <label for="inputEmail" class="sr-only">Email</label>
     <input type="email" name="email" id="inputEmail" placeholder="Email"
@@ -29,8 +33,8 @@
     <div class="invalid-feedback text-left" *ngIf="senha.invalid && (senha.dirty || senha.touched)">
       <div *ngIf="senha.invalid"><p>* Campo senha é de preenchimento obrigatório</p></div>
     </div>
-        
-    <!--Nome -->
+
+    <!--Nome-->
     <label for="inputNome" class="sr-only">Nome</label>
     <input type="text" name="nome" id="inputNome" placeholder="Nome"
            class="form-control mb-2" #nome="ngModel"
@@ -44,7 +48,7 @@
       <div *ngIf="nome.errors.required"><p>* Campo nome é de preenchimento obrigatório</p></div>
     </div>
 
-    <!--SobreNome -->
+    <!--SobreNome-->
     <label for="inputSobreNome" class="sr-only">SobreNome</label>
     <input type="text" name="sobreNome" id="inputSobreNome" placeholder="SobreNome"
            class="form-control mb-2" #sobreNome="ngModel"
@@ -53,21 +57,25 @@
               'is-invalid': sobreNome.invalid && (sobreNome.dirty || sobreNome.touched),
               'is-valid': sobreNome.valid && (sobreNome.dirty || sobreNome.touched)
            }"
-          required />
+           required />
     <div class="invalid-feedback text-left" *ngIf="sobreNome.invalid && (sobreNome.dirty || sobreNome.touched)">
       <div *ngIf="sobreNome.errors.required"><p>* Campo SobreNome é de preenchimento obrigatório</p></div>
     </div>
 
-    <div class="alert alert-danger" *ngIf="mensagem">
-      {{ mensagem }}
-    </div>
 
-    <button class="btn btn-primary btn-block" type="submit" (click)="cadastrar()" [disabled]="_ativarSpinner">
-      <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" *ngIf="_ativarSpinner"></span>
+    <!--Botoes-->
+    <button class="btn btn-primary btn-block" type="submit" (click)="cadastrar()" [disabled]="ativarSpinner">
+      <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" *ngIf="ativarSpinner"></span>
       Cadastrar
     </button>
-    <div>
+    <div class="mb-3">
       Já tem um cadastro? <a [routerLink]='["/login"]'>Entrar</a>
+    </div>
+
+    <div class="alert alert-success" *ngIf="usuarioCadastrado">
+      {{ mensagem }}
+      <br />
+      <a class="alert-link" [routerLink]='["/login"]'>Clique aqui</a> para acessar o sistema com sua conta.
     </div>
   </form>
 </div>

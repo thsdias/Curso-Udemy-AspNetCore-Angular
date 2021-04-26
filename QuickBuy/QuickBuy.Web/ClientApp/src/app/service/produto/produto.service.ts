@@ -1,7 +1,8 @@
-import { Injectable, Inject, inject, OnInit } from "@angular/core";
+import { Injectable, Inject, inject, OnInit, DebugElement } from "@angular/core";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Observable, observable } from "rxjs";
 import { Produto } from "../../model/produto";
+import { debug } from "util";
 
 
 @Injectable({
@@ -25,17 +26,17 @@ export class ProdutoService implements OnInit
   }
 
   public cadastrar(produto: Produto): Observable<Produto> { 
-    return this.http.post<Produto>(this._baseUrl + "api/produto/cadastrar",
+    return this.http.post<Produto>(this._baseUrl + "api/produto/incluir",
                                     JSON.stringify(produto), { headers: this.headers });
   }
 
-  public atualizar(produto: Produto): Observable<Produto> {
-    return this.http.post<Produto>(this._baseUrl + "api/produto/atualizar",
+  public atualizar(produto: Produto): Observable<Produto> { 
+    return this.http.put<Produto>(this._baseUrl + "api/produto/atualizar",
                                     JSON.stringify(produto), { headers: this.headers });
   }
 
-  public deletar(produto: Produto): Observable<Produto> {
-    return this.http.post<Produto>(this._baseUrl + "api/produto/deletar",
+  public deletar(produto: Produto): Observable<Produto[]> { 
+    return this.http.post<Produto[]>(this._baseUrl + "api/produto/remover",
                                     JSON.stringify(produto), { headers: this.headers });
   }
 
@@ -45,5 +46,14 @@ export class ProdutoService implements OnInit
 
   public obterTodos(): Observable<Produto[]> {
     return this.http.get<Produto[]>(this._baseUrl + "api/produto");
+  }
+
+  public enviarArquivo(arquivoSelecionado: File): Observable<string> { 
+    const formData: FormData = new FormData();
+
+    // Chave / arquivo / nome.
+    formData.append("arquivoEnviado", arquivoSelecionado, arquivoSelecionado.name);
+
+    return this.http.post<string>(this._baseUrl + "api/produto/enviarArquivo", formData);
   }
 }

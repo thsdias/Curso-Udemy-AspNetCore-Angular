@@ -1,3 +1,5 @@
+@import url(../../app.component.css);
+
 .form-signin {
     width: 100%;
     max-width: 420px;
@@ -17,10 +19,6 @@
     height: auto;
     padding: 10px;
     font-size: 16px;
-}
-
-.login {
-  color: #8b8c8e;
 }
 
 img {
