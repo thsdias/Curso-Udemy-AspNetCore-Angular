@@ -1,0 +1,115 @@
+<div class="text-center">
+  <form class="form-signin">
+    <p class="h4 mb-4 titulo">{{ titulo }}</p>
+
+    <div class="alert alert-danger mb-3" *ngIf="mensagem && !enderecoCadastrado">
+      {{ mensagem }}
+    </div>
+
+    <!--CEP-->
+    <label for="inputCEP" class="sr-only">CEP</label>
+    <input type="number" name="cep" id="inputCEP" placeholder="CEP (apenas números)"
+           class="form-control mb-2 col-md-6" #cep="ngModel" number
+           [(ngModel)]="endereco.cep"
+           [ngClass]="{
+              'is-invalid': cep.invalid && (cep.dirty || cep.touched),
+              'is-valid': cep.valid && (cep.dirty || cep.touched)
+           }"
+           required />
+    <div class="invalid-feedback text-left" *ngIf="cep.invalid && (cep.dirty || cep.touched)">
+      <div *ngIf="cep.errors.required"><p>* Campo CEP é de preenchimento obrigatório</p></div>
+    </div>
+
+    <!--Logradouro-->
+    <label for="inputEndereco" class="sr-only">Endereço</label>
+    <input type="text" name="endereco" id="inputEndereco" placeholder="Endereço"
+           class="form-control mb-2" #logradouro="ngModel"
+           [(ngModel)]="endereco.logradouro"
+           [ngClass]="{
+              'is-invalid': logradouro.invalid && (logradouro.dirty || logradouro.touched),
+              'is-valid': logradouro.valid && (logradouro.dirty || logradouro.touched)
+           }"
+           required />
+    <div class="invalid-feedback text-left" *ngIf="logradouro.invalid && (logradouro.dirty || logradouro.touched)">
+      <div *ngIf="logradouro.errors.required"><p>* Campo Endereço é de preenchimento obrigatório</p></div>
+    </div>
+
+    <div class="input-group">
+      <!--Numero-->
+      <label for="inputNumero" class="sr-only">Número</label>
+      <input type="number" name="numero" id="inputNumero" placeholder="Numero"
+             class="form-control mb-2 col-md-4 mr-2" #numero="ngModel" [(ngModel)]="endereco.numero" />
+
+      <!--Complemento-->
+      <label for="inputComplemento" class="sr-only">Complemento</label>
+      <input type="text" name="complemento" id="inputComplemento" placeholder="Complemento"
+             class="form-control mb-2" #complemento="ngModel" [(ngModel)]="endereco.complemento" />
+    </div>
+
+    <!--Bairro-->
+    <label for="inputBairro" class="sr-only">Bairro</label>
+    <input type="text" name="bairro" id="inputBairro" placeholder="Bairro"
+           class="form-control mb-2" #bairro="ngModel"
+           [(ngModel)]="endereco.bairro"
+           [ngClass]="{
+              'is-invalid': bairro.invalid && (bairro.dirty || bairro.touched),
+              'is-valid': bairro.valid && (bairro.dirty || bairro.touched)
+           }"
+           required />
+    <div class="invalid-feedback text-left" *ngIf="bairro.invalid && (bairro.dirty || bairro.touched)">
+      <div *ngIf="bairro.errors.required"><p>* Campo Bairro é de preenchimento obrigatório</p></div>
+    </div>
+
+    <!--Cidade-->
+    <label for="inputCidade" class="sr-only">Cidade</label>
+    <input type="text" name="cidade" id="inputCidade" placeholder="Cidade"
+           class="form-control mb-2" #cidade="ngModel"
+           [(ngModel)]="endereco.cidade"
+           [ngClass]="{
+              'is-invalid': cidade.invalid && (cidade.dirty || cidade.touched),
+              'is-valid': cidade.valid && (cidade.dirty || cidade.touched)
+           }"
+           required />
+    <div class="invalid-feedback text-left" *ngIf="cidade.invalid && (cidade.dirty || cidade.touched)">
+      <div *ngIf="cidade.errors.required"><p>* Campo Cidade é de preenchimento obrigatório</p></div>
+    </div>
+
+    <!--UF-->
+    <label for="inputEstado" class="sr-only">Estado</label>
+    <select class="custom-select mb-2" name="estado" [(ngModel)]="endereco.estado" #estado
+            [ngClass]="{
+              'is-invalid': estado.invalid && (estado.dirty || estado.touched),
+              'is-valid': estado.valid && (estado.dirty || estado.touched)
+            }" required>
+      <option value="" selected disabled hidden>Please select</option>
+      <option *ngFor="let e of estados" [value]="e">{{ e }}</option>
+    </select>
+    <div class="invalid-feedback text-left" *ngIf="estado.invalid && (estado.dirty || estado.touched)">
+      <div *ngIf="estado.errors.required"><p>* Campo UF é de preenchimento obrigatório</p></div>
+    </div>
+
+    <!--Apelido-->
+    <label for="inputApelido" class="sr-only">Apelido</label>
+    <input type="text" name="apelido" id="inputApelido" placeholder="Apelido"
+           class="form-control mb-2" #apelido="ngModel" [(ngModel)]="endereco.apelido"
+           [ngClass]="{
+              'is-invalid': apelido.invalid && (apelido.dirty || apelido.touched),
+              'is-valid': apelido.valid && (apelido.dirty || apelido.touched)
+           }"
+           required />
+    <div class="invalid-feedback text-left" *ngIf="apelido.invalid && (apelido.dirty || apelido.touched)">
+      <div *ngIf="apelido.errors.required"><p>* Campo Apelido é de preenchimento obrigatório</p></div>
+    </div>
+
+    <!--Botoes-->
+    <div class="input-group justify-content-between">
+      <button class="btn btn-primary col-md-5 mb-2" type="submit" (click)="cadastrar()" [disabled]="ativarSpinner">
+        <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" *ngIf="ativarSpinner"></span>
+        {{ rotuloBotao }}
+      </button>
+      <button class="btn btn-primary col-md-5 mb-2" type="submit" (click)="voltar()">
+        Voltar
+      </button>
+    </div>
+  </form>
+</div>

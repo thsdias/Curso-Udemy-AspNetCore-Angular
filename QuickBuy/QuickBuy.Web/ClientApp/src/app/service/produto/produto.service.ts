@@ -4,7 +4,6 @@ import { Observable, observable } from "rxjs";
 import { Produto } from "../../model/produto";
 import { debug } from "util";
 
-
 @Injectable({
   providedIn: "root"
 })
@@ -17,12 +16,12 @@ export class ProdutoService implements OnInit
     return new HttpHeaders().set('content-type', 'application/json');
   }
 
-  constructor(private http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
-    this._baseUrl = baseUrl;
-  }
-
   ngOnInit(): void {
     this.produtos = [];
+  }
+
+  constructor(private http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
+    this._baseUrl = baseUrl;
   }
 
   public cadastrar(produto: Produto): Observable<Produto> { 

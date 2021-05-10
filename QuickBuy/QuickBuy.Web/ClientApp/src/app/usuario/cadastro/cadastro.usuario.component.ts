@@ -14,11 +14,11 @@ export class CadastroUsuarioComponent implements OnInit
   public ativarSpinner: boolean;
   public usuarioCadastrado: boolean;
 
-  constructor(private usuarioService: UsuarioService) {
-  }
-
   ngOnInit(): void {
     this.usuario = new Usuario();
+  }
+
+  constructor(private usuarioService: UsuarioService) {
   }
 
   public cadastrar() {

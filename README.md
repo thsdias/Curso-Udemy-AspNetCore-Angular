@@ -34,9 +34,13 @@ Aprenda a construir e implantar sistemas Fullstack com Asp.Net Core e Angular
 
 ■ **Seção 8: Angular - Serviços**
 
-<br/><br/>
-<br/><br/>
+■ **Seção 9: Angular Template (Módulo de Usuário e Produto)**
 
+■ **Seção 10: Web API - Parte 2**
+
+■ **Seção 11: Construção da Loja Virtual**
+<br/><br/>
+<br/><br/>
 ##### Conteúdo Detalhado:
 
 | Seção 1: Instalação e Arquitetura do Projeto |
@@ -229,3 +233,46 @@ Aprenda a construir e implantar sistemas Fullstack com Asp.Net Core e Angular
 |150. Deletando um Produto|
 |151. Editando um Produto|
 |152. Cancelando o Cadastro de Produto|
+
+
+| Seção 11: Construção da Loja Virtual |
+| ------ |
+|153. Adicionando o Componente da Loja
+|154. Chamando Web API para Listar os Produtos na Loja|
+|155. Utilizando os Parâmetros do Sistema de Grid do Bootstrap|
+|156. Construindo o Template Para Exibição do Produtos Na Loja|
+|157. Como Truncar Texto De Descrição do Produto no Angular|
+|158. Limpando SessionStorage Antes de Adicionar Novo Produto|
+|159. Adicionando Componente para Exibir Detalhe do Produto|
+|160. Configurando Redirecionamento Para Detalhe do Produto|
+|161. Template Detalhe do Produto|
+|162. Adicionando Os Arquivos para Componente Efetivar Compra|
+|163. Redirecionando para a Página de Efetivar Compra|
+|164. Criando o Carrinho de Compras|
+|165. Exibindo os Produdos do Carrinho de Compras|
+|166. Adicionando Tela de Resumo|
+|167. Adicionando Campo Quantidade|
+|168. Botão Para Remover Produto|
+|169. Calculando Valor Total Para Compra|
+|170. Reativando o GuardaRotas|
+|171. Criar Usuario Como Administrador|
+|172. Limitando Acesso ao Cadastro de Produto Só Para Admintradores|
+|173. Adicionando Ícone do Carrinho de Compras No NavMenu|
+|174. Eliminando Erro No Carrinho de Compras|
+|175. Adicionando Modelo de Pedido|
+|176. Adicionando Modelo de Item de Pedido|
+|177. Criando Método de Criação de Pedido|
+|178. Criando PedidoServico|
+|179. Criando WEB API Pedido Controller|
+|180. Tratando Retorno do PedidoServico|
+|181. Adicionando Página Compra Realizada|
+|182. Realizando Todos os Testes|
+|183. Adicionando Recurso Para Tratar Referência em Looping|
+
+
+| Seção 12: Seção 12: Implantação do QuickBuy ( Deploy) |
+| ------ |
+|184. Instalação do Internet Information Server (IIS)|
+|185. Instalação do Host do ASP.NET Core 2.2 no IIS|
+|186. Criação do Aplicativo QuickBuy no IIS|
+|187. Publicação do Projeto QuickBuy No IIS|

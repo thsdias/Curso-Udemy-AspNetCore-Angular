@@ -10,6 +10,8 @@ namespace QuickBuy.Dominio.Entidades
 
         public int Quantidade { get; set; }
 
+        public decimal Valor { get; set; }
+
         public int PedidoId { get; set; }
 
         public virtual Pedido Pedido { get; set; }

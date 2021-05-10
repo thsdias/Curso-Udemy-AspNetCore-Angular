@@ -33,6 +33,10 @@ export class UsuarioService
     return this._usuario != null && (this._usuario.email != "" && this._usuario.senha != null);
   }
 
+  public usuarioAdministrador(): boolean { 
+    return this.usuarioAutenticado() && this.usuario.administrador;
+  }
+
   public verificarUsuario(usuario: Usuario): Observable<Usuario> { 
     return this.http.post<Usuario>(this._baseUrl + "api/usuario/verificarUsuario", JSON.stringify(usuario), { headers: this.headers });
   }
@@ -50,10 +54,15 @@ export class UsuarioService
     return this.http.post<Usuario>(this._baseUrl + "api/usario", body, { headers });
     */
 
-    console.log('acesso metodo Cadastrar.ts');
-    console.log(usuario);
-
     return this.http.post<Usuario>(this._baseUrl + "api/usuario/cadastrarUsuario", JSON.stringify(usuario), { headers: this.headers });
+  }
+
+  public atualizar(usuario: Usuario): Observable<Usuario> {
+    return this.http.post<Usuario>(this._baseUrl + "api/usuario/atualizarUsuario", JSON.stringify(usuario), { headers: this.headers });
+  }
+
+  public atualizarUsuarioAutenticado(usuario: Usuario) { 
+    sessionStorage.setItem('usuario-autenticado', JSON.stringify(usuario));
   }
 
   public limparSessao() {

@@ -1,0 +1,19 @@
+<div *ngIf="!produtos">Listando produtos cadastrados.</div>
+
+<div class="container" *ngIf="produtos">
+  <div class="row">
+    <div class="col-md-4 mb-4" *ngFor="let p of produtos">
+      <a class="link-produto" (click)="detalharProduto(p)">
+        <div class="card">
+          <div class="text-center">
+            <img class="card-img-top text-center" src="../../../../../arquivos/{{ p.nomeArquivo }}" />
+          </div>
+          <div class="card-body">
+            <div class="card-text mb-2">{{ p.descricao | truncate: 50 }}</div>
+            <p class="h5">R$ {{ p.preco }}</p>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>

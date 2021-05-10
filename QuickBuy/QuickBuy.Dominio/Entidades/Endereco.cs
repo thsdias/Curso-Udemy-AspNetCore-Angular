@@ -13,9 +13,11 @@ namespace QuickBuy.Dominio.Entidades
 
         public string Cidade { get; set; }
 
+        public string Bairro { get; set; }
+
         public string Logradouro { get; set; }
 
-        public int Numero { get; set; }
+        public string Numero { get; set; }
 
         public string Complemento { get; set; }
 
@@ -45,6 +47,16 @@ namespace QuickBuy.Dominio.Entidades
             if (string.IsNullOrEmpty(Logradouro))
             {
                 AdicionarMsgCritica("Informe o logradouro.");
+            }
+
+            if (string.IsNullOrEmpty(Bairro))
+            {
+                AdicionarMsgCritica("Informe o Bairro.");
+            }
+
+            if (string.IsNullOrEmpty(Apelido))
+            {
+                AdicionarMsgCritica("Informe um Apelido para o Endereço.");
             }
         }
     }

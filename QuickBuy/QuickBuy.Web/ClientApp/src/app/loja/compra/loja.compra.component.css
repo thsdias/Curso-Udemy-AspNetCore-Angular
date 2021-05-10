@@ -1,0 +1,17 @@
+.imagem-produto {
+    width: 45%;
+}
+
+.col-imagem {
+    width: 20%;
+}
+.col-desc-produto {
+    width: 35%;
+}
+.col-qtd {
+    width: 5%;
+}
+
+.col-valor {
+    width: 150px;
+}

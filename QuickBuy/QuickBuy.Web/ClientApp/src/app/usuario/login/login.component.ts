@@ -8,34 +8,34 @@ import { UsuarioService } from "../../service/usuario/usuario.service";
   templateUrl: "./login.component.html",
   styleUrls: ["./login.component.css"]
 })
-export class LoginComponent implements OnInit {
-  public usuario;
+export class LoginComponent implements OnInit
+{
+  public usuario: Usuario;
   public returnUrl: string;
   public mensagem: string;
-  private _ativarSpinner: Boolean;
-
-  constructor(public router: Router, private activateRouter: ActivatedRoute, private usuarioService: UsuarioService)
-  { 
-  }
-
+  public _ativarSpinner: Boolean;
+  
   ngOnInit(): void {
     this.returnUrl = this.activateRouter.snapshot.queryParams['returnUrl'];
     this.usuario = new Usuario();
   }
 
+  constructor(public router: Router, private activateRouter: ActivatedRoute, private usuarioService: UsuarioService) {
+
+  }
+
   login() {
     this._ativarSpinner = true;
     this.usuarioService.verificarUsuario(this.usuario).subscribe(
-      data => {
-        this.usuarioService.usuario = data;
-
+      usuario => { 
+        this.usuarioService.usuario = usuario;
         if (this.returnUrl == null) {
           this.router.navigate(['/']);  // retorna para a pagina raiz/principal.
         } else {
           this.router.navigate([this.returnUrl]);
         }
       },
-      erro => {
+      erro => { 
         console.log(erro.error);
         this.mensagem = erro.error;
         this._ativarSpinner = false;

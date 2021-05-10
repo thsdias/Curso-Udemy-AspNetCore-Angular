@@ -26,12 +26,24 @@
 
   <ItemGroup>
     <None Remove="ClientApp\src\app\autorizacao\valida.rotas.ts" />
+    <None Remove="ClientApp\src\app\loja\carrinho\loja.carrinho.ts" />
+    <None Remove="ClientApp\src\app\loja\compra-finalizada\loja.compra.finalizada.component.ts" />
+    <None Remove="ClientApp\src\app\loja\compra\loja.compra.component.ts" />
+    <None Remove="ClientApp\src\app\loja\pesquisa\loja.pesquisa.component.ts" />
+    <None Remove="ClientApp\src\app\loja\produtos\loja.produtos.component.ts" />
+    <None Remove="ClientApp\src\app\model\endereco.ts" />
+    <None Remove="ClientApp\src\app\model\itemPedido.ts" />
+    <None Remove="ClientApp\src\app\model\Pedido.ts" />
     <None Remove="ClientApp\src\app\model\produto.ts" />
     <None Remove="ClientApp\src\app\model\usuario.ts" />
     <None Remove="ClientApp\src\app\produto\pesquisa\pesquisa.produto.component.ts" />
+    <None Remove="ClientApp\src\app\service\endereco\enderecoService.ts" />
+    <None Remove="ClientApp\src\app\service\pedido\pedido.service.ts" />
     <None Remove="ClientApp\src\app\service\produto\produto.service.ts" />
     <None Remove="ClientApp\src\app\service\usuario\usuario.service.ts" />
     <None Remove="ClientApp\src\app\usuario\cadastro\cadastro.usuario.component.ts" />
+    <None Remove="ClientApp\src\app\usuario\conta\conta.component.ts" />
+    <None Remove="ClientApp\src\app\usuario\endereco\endereco.component.ts" />
     <None Remove="ClientApp\src\app\usuario\login\login.component.ts" />
   </ItemGroup>
 
@@ -52,12 +64,24 @@
 
   <ItemGroup>
     <TypeScriptCompile Include="ClientApp\src\app\autorizacao\valida.rotas.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\loja\carrinho\loja.carrinho.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\loja\compra-finalizada\loja.compra.finalizada.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\loja\compra\loja.compra.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\loja\pesquisa\loja.pesquisa.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\loja\produtos\loja.produtos.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\model\endereco.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\model\itemPedido.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\model\pedido.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\model\produto.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\model\usuario.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\produto\pesquisa\pesquisa.produto.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\service\endereco\enderecoService.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\service\pedido\pedido.service.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\service\produto\produto.service.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\service\usuario\usuario.service.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\usuario\cadastro\cadastro.usuario.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\usuario\conta\conta.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\usuario\endereco\endereco.component.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\usuario\login\login.component.ts" />
   </ItemGroup>
 

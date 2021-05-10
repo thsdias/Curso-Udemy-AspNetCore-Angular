@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-5 text-center">
+      <img class="imagem-produto" src="../../../../../arquivos/{{ produto.nomeArquivo }}" />
+    </div>
+    <div class="col-md-4">
+      <div class="row mb-4">
+        <p class="titulo h4">{{ produto.nome }}</p>
+      </div>
+      <div class="row mb-3">{{ produto.descricao }}</div>
+      <div class="row mb-4"><b>R$ {{ produto.preco }}</b></div>
+      <div class="row mb-4">
+        <button class="btn btn-success btn-lg" (click)="efetivarCompra()">Comprar</button>
+      </div>
+    </div>
+  </div>
+</div>

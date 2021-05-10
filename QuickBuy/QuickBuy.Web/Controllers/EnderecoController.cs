@@ -2,6 +2,7 @@
 using QuickBuy.Dominio.Contratos;
 using QuickBuy.Dominio.Entidades;
 using System;
+using System.Linq;
 
 namespace QuickBuy.Web.Controllers
 {
@@ -29,11 +30,16 @@ namespace QuickBuy.Web.Controllers
         }
 
         [HttpGet("ObterTodos")]
-        public IActionResult ObterTodos()
+        public IActionResult ObterTodos(int usuarioId)
         {
             try
             {
-                return Ok(_enderecoRepositorio.ObterTodos());
+                var enderecos = _enderecoRepositorio.ObterTodos();
+
+                if (enderecos != null)
+                    return Json(enderecos.AsEnumerable().Where(e => e.UsuarioId == usuarioId));
+                else
+                    return Json(new Endereco());
             }
             catch (Exception ex)
             {
@@ -70,27 +76,13 @@ namespace QuickBuy.Web.Controllers
             }
         }
 
-        [HttpPut("Atualizar")]
-        public IActionResult Atualizar([FromBody]Endereco endereco)
-        {
-            try
-            {
-                _enderecoRepositorio.Atualizar(endereco);
-                return Json(_enderecoRepositorio.ObterPorId(endereco.Id));
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.ToString());
-            }
-        }
-
-        [HttpDelete("Remover")]
+        [HttpPost("Remover")]
         public IActionResult Remover([FromBody]Endereco endereco)
         {
             try
             {
                 _enderecoRepositorio.Remover(endereco);
-                return Json(_enderecoRepositorio.ObterTodos());
+                return Ok();
             }
             catch (Exception ex)
             {

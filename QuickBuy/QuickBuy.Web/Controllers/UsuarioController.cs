@@ -44,7 +44,20 @@ namespace QuickBuy.Web.Controllers
             catch (Exception ex)
             {
                 return BadRequest(ex.ToString());
-                throw;
+            }
+        }
+
+        [HttpPost("AtualizarUsuario")]
+        public ActionResult Atualizar([FromBody] Usuario usuario)
+        {
+            try
+            {
+                _usuarioRepositorio.Atualizar(usuario);
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.ToString());
             }
         }
 
@@ -57,7 +70,7 @@ namespace QuickBuy.Web.Controllers
 
                 if (usuarioRetorno != null)
                 {
-                    return Ok(usuarioRetorno);
+                    return Json(usuarioRetorno);
                 }
 
                 return BadRequest("Usuário ou senha inválido");

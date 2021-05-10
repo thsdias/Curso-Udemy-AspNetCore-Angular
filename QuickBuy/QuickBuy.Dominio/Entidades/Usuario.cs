@@ -15,6 +15,8 @@ namespace QuickBuy.Dominio.Entidades
 
         public string SobreNome { get; set; }
 
+        public bool Administrador { get; set; }
+
         public virtual ICollection<Endereco> Enderecos { get; set; }
 
         public virtual ICollection<Pedido> Pedidos { get; set; }

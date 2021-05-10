@@ -1,0 +1,58 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 text-center">
+      <div class="alert alert-danger mb-3" *ngIf="mensagem">
+        {{ mensagem }}
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-8">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Produto</th>
+            <th>Quantidade</th>
+            <th>Preço</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let p of produtos">
+            <td class="col-imagem text-center">
+              <img class="imagem-produto" src="../../../../../arquivos/{{ p.nomeArquivo }}" />
+            </td>
+            <td class="col-desc-produto">{{ p.nome }}</td>
+            <td class="col-qtd">
+              <input type="number" class="form-control" value="1" (change)="atualizarPreco(p, $event.target.value)"
+                     [(ngModel)]="p.quantidade" placeholder="1" />
+            </td>
+            <td class="col-valor">R$ {{ p.preco | number:'1.0-2' }}</td>
+            <td class="col-btn">
+              <button type="button" class="btn btn-secondary btn-sm" (click)="removerProduto(p)">Excluir</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-md-2 offset-md-2">
+      <div class="row">
+        <div class="card">
+          <div class="card-header">Resumo</div>
+          <div class="card-body">
+            <p class="mb-2"><b>Total: </b>R$ {{ total | number: '1.0-2' }}</p>
+            <div class="mb-4">
+              <b>Entrega:</b>
+              <select class="custom-select" [(ngModel)]="endereco" #enderecoEntrega>
+                <option selected="selected"></option>
+                <option *ngFor="let e of enderecos" [value]="e.id">{{ e.apelido }}</option>
+              </select>
+            </div>
+            <button type="button" class="btn btn-success" (click)="efetivarCompra()">Efetivar Compra</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

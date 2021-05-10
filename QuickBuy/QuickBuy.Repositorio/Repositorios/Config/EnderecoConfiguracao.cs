@@ -35,10 +35,17 @@ namespace QuickBuy.Repositorio.Repositorios.Config
                 .IsRequired()
                 .HasMaxLength(100);
 
+            // Campo Bairro.
+            builder
+                .Property(e => e.Bairro)
+                .IsRequired()
+                .HasMaxLength(50);
+
             // Campo Numero.
             builder
                 .Property(e => e.Numero)
-                .HasColumnType("int");
+                .IsRequired(false)
+                .HasMaxLength(5);
 
             // Campo Complemento.
             builder

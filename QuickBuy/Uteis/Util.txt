@@ -22,3 +22,30 @@
                 spa.UseProxyToSpaDevelopmentServer("http://localhost:4200/");
             }
         });
+
+
+* Instalar Truncate Component:
+
+- Acessar diretoro raiz do angular (./ClientApp)
+- executar comando:
+    > npm install ng2-truncate --save-dev
+- validar a inclusao de uma nova dependencia no arquivo package.json
+    "devDependencies": {
+        ...
+        "ng2-truncate": "^1.3.17"
+    }
+- Importa modulo no arquivo app.module.ts 
+    import { TruncateModule } from 'ng2-truncate';
+    @NgModule({
+    declarations: [
+        ...
+    ],
+    imports: [
+        ...
+        TruncateModule,      
+    ],
+    providers: [
+        ...
+    ],
+    bootstrap: [AppComponent]
+    })

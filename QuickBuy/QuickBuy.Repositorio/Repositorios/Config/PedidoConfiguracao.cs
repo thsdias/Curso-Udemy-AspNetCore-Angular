@@ -21,9 +21,15 @@ namespace QuickBuy.Repositorio.Repositorios.Config
                 .Property(p => p.DataPrevisaoEntrega)
                 .IsRequired();
 
+            // Campo Valor Total Compra.
+            builder
+                .Property(p => p.ValorTotal)
+                .IsRequired()
+                .HasColumnType("decimal(18,2)");
+
             // Campo Item Pedido.
             builder
-                .HasMany(p => p.ItensPedidos)
+                .HasMany(p => p.ItensPedido)
                 .WithOne(i => i.Pedido);
         }
     }

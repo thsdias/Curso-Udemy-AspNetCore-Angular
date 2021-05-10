@@ -130,7 +130,7 @@ namespace QuickBuy.Web.Controllers
         private static string GerarNovoNomeArquivo(string nomeArquivo, string extensao)
         {
             var nomeReduzido = Path.GetFileNameWithoutExtension(nomeArquivo).Take(12).ToArray();
-            var novoNomeArquivo = new string(nomeReduzido).Replace(" ", "-") + "." + extensao;
+            var novoNomeArquivo = new string(nomeReduzido).Replace(" ", "-");
             novoNomeArquivo = $"{novoNomeArquivo}_{DateTime.Now.Year}{DateTime.Now.Month}{DateTime.Now.Day}{DateTime.Now.Hour}{DateTime.Now.Minute}{DateTime.Now.Second}.{extensao}";
             return novoNomeArquivo;
         }

@@ -37,6 +37,10 @@ namespace QuickBuy.Repositorio.Repositorios.Config
                 .IsRequired()
                 .HasMaxLength(250);
 
+            // Campo Admin.
+            builder
+                .Property(u => u.Administrador);
+
             // Campo Enderecos.
             builder
                 .HasMany(u => u.Enderecos)

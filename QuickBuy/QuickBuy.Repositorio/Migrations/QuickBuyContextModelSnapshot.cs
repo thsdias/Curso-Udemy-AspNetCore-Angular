@@ -25,6 +25,10 @@ namespace QuickBuy.Repositorio.Migrations
                     b.Property<string>("Apelido")
                         .HasMaxLength(30);
 
+                    b.Property<string>("Bairro")
+                        .IsRequired()
+                        .HasMaxLength(50);
+
                     b.Property<string>("CEP")
                         .IsRequired()
                         .HasMaxLength(12);
@@ -44,8 +48,8 @@ namespace QuickBuy.Repositorio.Migrations
                         .IsRequired()
                         .HasMaxLength(100);
 
-                    b.Property<int>("Numero")
-                        .HasColumnType("int");
+                    b.Property<string>("Numero")
+                        .HasMaxLength(5);
 
                     b.Property<int>("UsuarioId");
 
@@ -68,6 +72,9 @@ namespace QuickBuy.Repositorio.Migrations
                     b.Property<int>("Quantidade")
                         .HasColumnType("int");
 
+                    b.Property<decimal>("Valor")
+                        .HasColumnType("decimal(18,2)");
+
                     b.HasKey("Id");
 
                     b.HasIndex("PedidoId");
@@ -89,6 +96,9 @@ namespace QuickBuy.Repositorio.Migrations
                     b.Property<int>("FormaPagamentoId");
 
                     b.Property<int>("UsuarioId");
+
+                    b.Property<decimal>("ValorTotal")
+                        .HasColumnType("decimal(18,2)");
 
                     b.HasKey("Id");
 
@@ -129,6 +139,8 @@ namespace QuickBuy.Repositorio.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
+
+                    b.Property<bool>("Administrador");
 
                     b.Property<string>("Email")
                         .IsRequired()
@@ -200,7 +212,7 @@ namespace QuickBuy.Repositorio.Migrations
             modelBuilder.Entity("QuickBuy.Dominio.Entidades.ItemPedido", b =>
                 {
                     b.HasOne("QuickBuy.Dominio.Entidades.Pedido", "Pedido")
-                        .WithMany("ItensPedidos")
+                        .WithMany("ItensPedido")
                         .HasForeignKey("PedidoId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });

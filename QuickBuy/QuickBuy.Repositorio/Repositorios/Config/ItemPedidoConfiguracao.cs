@@ -22,6 +22,12 @@ namespace QuickBuy.Repositorio.Repositorios.Config
             builder
                 .Property(p => p.ProdutoId)
                 .IsRequired();
+
+            // Campo Valor.
+            builder
+                .Property(p => p.Valor)
+                .IsRequired()
+                .HasColumnType("decimal(18,2)");
         }
     }
 }

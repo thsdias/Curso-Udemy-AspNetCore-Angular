@@ -17,10 +17,7 @@ export class ProdutoComponent implements OnInit
   public ativarSpinner: boolean;
   public atualizaProduto: boolean;
 
-  constructor(private produtoServico: ProdutoService, private router: Router) {
-  }
-
-  ngOnInit(): void { 
+  ngOnInit(): void {
     var produtoSession = sessionStorage.getItem('produtoSession');
 
     if (produtoSession) {
@@ -29,14 +26,17 @@ export class ProdutoComponent implements OnInit
       this.titulo = "Editar Produto"
     } else {
       this.produto = new Produto();
-      this.titulo= "Cadastro de Produto"
+      this.titulo = "Cadastro de Produto"
     }
+  }
+
+  constructor(private produtoService: ProdutoService, private router: Router) {
   }
 
   public inputFile(files: FileList) { 
     this.arquivoSelecionado = files.item(0);
     this.ativarEsperar();
-    this.produtoServico.enviarArquivo(this.arquivoSelecionado).subscribe(
+    this.produtoService.enviarArquivo(this.arquivoSelecionado).subscribe(
       retorno => {
         this.mensagem = "";
         this.produto.nomeArquivo = retorno;
@@ -57,7 +57,7 @@ export class ProdutoComponent implements OnInit
     if (this.produto.nomeArquivo == undefined)
       this.produto.nomeArquivo = "sem-imagem.png";
 
-    this.produtoServico.cadastrar(this.produto).subscribe(
+    this.produtoService.cadastrar(this.produto).subscribe(
       produto => {
         this.mensagem = "";
         console.log(produto);
@@ -65,8 +65,8 @@ export class ProdutoComponent implements OnInit
         this.router.navigate(['/pesquisa-produto']);
       },
       err => { 
-        console.log(err.error);
-        this.mensagem = "Erro ao cadastrar o Produto!";
+        console.log("Erro ao cadastrar o Produto");
+        this.mensagem = err.error;
         this.desativarEsperar();
       }
     );
@@ -74,7 +74,7 @@ export class ProdutoComponent implements OnInit
 
   public alterar() {
     this.ativarEsperar();
-    this.produtoServico.atualizar(this.produto).subscribe(
+    this.produtoService.atualizar(this.produto).subscribe(
       produto => {
         this.mensagem = "";
         console.log(produto);
@@ -82,8 +82,8 @@ export class ProdutoComponent implements OnInit
         this.router.navigate(['/pesquisa-produto']);
       },
       err => {
-        console.log(err.error);
-        this.mensagem = "Erro ao editar o Produto";
+        console.log("Erro ao editar o Produto");
+        this.mensagem = err.error;
         this.desativarEsperar();
       }
     );

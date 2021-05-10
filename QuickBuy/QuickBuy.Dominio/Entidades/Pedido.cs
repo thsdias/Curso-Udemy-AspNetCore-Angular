@@ -13,6 +13,8 @@ namespace QuickBuy.Dominio.Entidades
 
         public DateTime DataPrevisaoEntrega { get; set; }
 
+        public decimal ValorTotal { get; set; }
+
         public int UsuarioId { get; set; }
 
         public virtual Usuario Usuario { get; set; }
@@ -25,11 +27,11 @@ namespace QuickBuy.Dominio.Entidades
 
         public virtual FormaPagamento FormaPagamento { get; set; }
 
-        public virtual ICollection<ItemPedido> ItensPedidos { get; set; }
+        public virtual ICollection<ItemPedido> ItensPedido { get; set; }
 
         public override void ValidaDados()
         {
-            if(!ItensPedidos.Any())
+            if(ItensPedido == null || !ItensPedido.Any())
             {
                 AdicionarMsgCritica("Pedido não pode ficar sem item de pedido.");
             }

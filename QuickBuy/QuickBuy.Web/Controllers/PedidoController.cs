@@ -63,7 +63,7 @@ namespace QuickBuy.Web.Controllers
                     _pedidoRepositorio.Adicionar(pedido);
                 }
 
-                return Created("api/endereco", pedido);
+                return Ok(pedido.Id);
             }
             catch (Exception ex)
             {
