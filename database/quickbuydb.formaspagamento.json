@@ -1,0 +1,17 @@
+[
+	{
+		"Id" : 1,
+		"Nome" : "Boleto",
+		"Descricao" : "Forma de Pagamento do tipo Boleto."
+	},
+	{
+		"Id" : 2,
+		"Nome" : "Cartão de Crédito",
+		"Descricao" : "Forma de Pagamento do tipo Cartão de Crédito."
+	},
+	{
+		"Id" : 3,
+		"Nome" : "Depósito",
+		"Descricao" : "Forma de Pagamento do tipo Depósito."
+	}
+]

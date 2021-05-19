@@ -1,0 +1,79 @@
+[
+	{
+		"Id" : 1,
+		"Nome" : "Galaxy S10",
+		"Descricao" : "Smartphone Samsung Galaxy S10 128GB 4G Wi-Fi Tela 6.1 Dual Chip 8MP RAM Câmera Tripla + Selfie 10MP - Preto",
+		"Preco" : 2469.05,
+		"NomeArquivo" : "galaxy_S10_b_20215722622.png"
+	},
+	{
+		"Id" : 2,
+		"Nome" : "Mouse Gamer Cruiser RGB 10000dpi Preto Fortrek G",
+		"Descricao" : "O Mouse Gamer CRUISER RGB da Fortrek é uma ótima escolha para seu setup gamer, com um design moderno e confortável proporciona uma ótima jogabilidade e controle dos movimentos.",
+		"Preco" : 140.85,
+		"NomeArquivo" : "fortrek_crui_20215722628.png"
+	},
+	{
+		"Id" : 5,
+		"Nome" : "Galaxy Note 20 Ultra",
+		"Descricao" : "Smartphone Samsung Galaxy Note 20 Ultra 256GB 5G Wi-Fi Tela 6.9'' Dual Chip 12MP RAM Câmera Tripla + Selfie 10MP - Mystic Bronze",
+		"Preco" : 5748.54,
+		"NomeArquivo" : "galaxy_note__20215722638.png"
+	},
+	{
+		"Id" : 13,
+		"Nome" : "Produto I",
+		"Descricao" : "Desc Produto I",
+		"Preco" : 700.00,
+		"NomeArquivo" : "sem-imagem.png"
+	},
+	{
+		"Id" : 14,
+		"Nome" : "Galaxy S20 ",
+		"Descricao" : "Smartphone Samsung Galaxy S20 Fe 128GB 4G Wi-Fi Tela 6.5'' Dual Chip 6GB RAM Câmera Tripla + Selfie 32MP - Cloud White",
+		"Preco" : 3250.12,
+		"NomeArquivo" : "Galaxy_S20_F_20215722646.png"
+	},
+	{
+		"Id" : 15,
+		"Nome" : "Xiaomi Poco M3",
+		"Descricao" : "Smartphone Xiaomi Poco M3 128GB 4GB RAM Tela 6,53 Câmera Tripla 48MP Octa-core Dual Sim 6000mAh - AZUL",
+		"Preco" : 4300.00,
+		"NomeArquivo" : "xiaomi_poco__20215722653.png"
+	},
+	{
+		"Id" : 16,
+		"Nome" : "iPhone 11",
+		"Descricao" : "iPhone 11 Apple (128GB) Branco tela 6,1\" Câmera 12MP iOS",
+		"Preco" : 6700.90,
+		"NomeArquivo" : "iphone_11_wh_2021572273.png"
+	},
+	{
+		"Id" : 17,
+		"Nome" : "Galaxy S21+",
+		"Descricao" : "Smartphone Samsung Galaxy S21+ 128GB 5G Wi-Fi Tela 6.7'' Dual Chip 8GB RAM Câmera Tripla + Selfie 10MP - Preto",
+		"Preco" : 4500.85,
+		"NomeArquivo" : "galaxy_s21_b_20215722710.png"
+	},
+	{
+		"Id" : 18,
+		"Nome" : "Xiaomi Redmi 9a",
+		"Descricao" : "Xiaomi Redmi 9a Versão Global - 32gb / 2gb Ram - Dual Sim - Azul",
+		"Preco" : 2200.00,
+		"NomeArquivo" : "xiaomi_redmi_20215722722.png"
+	},
+	{
+		"Id" : 19,
+		"Nome" : "Whisky Jack Daniels Honey 1L",
+		"Descricao" : "Utiliza os mais refinados ingredientes naturais na sua fabricação: milho, centeio, malte de cevada, água e mel",
+		"Preco" : 189.90,
+		"NomeArquivo" : "Whisky_Jack__202157215337.png"
+	},
+	{
+		"Id" : 20,
+		"Nome" : "Produto II",
+		"Descricao" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+		"Preco" : 59.92,
+		"NomeArquivo" : "sem-imagem.png"
+	}
+]

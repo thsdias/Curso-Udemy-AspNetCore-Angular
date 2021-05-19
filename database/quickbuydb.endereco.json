@@ -1,0 +1,50 @@
+[
+	{
+		"Id" : 6,
+		"CEP" : "64025542",
+		"Estado" : "Piauí",
+		"Cidade" : "Teresina",
+		"Logradouro" : "Rua Raimundo Lima",
+		"Numero" : "350",
+		"Complemento" : null,
+		"Apelido" : "Casa",
+		"UsuarioId" : 6,
+		"Bairro" : "Parque Piauí"
+	},
+	{
+		"Id" : 7,
+		"CEP" : "55020190",
+		"Estado" : "Pernambuco",
+		"Cidade" : "Caruaru",
+		"Logradouro" : "Rua Marquês de Abrantes",
+		"Numero" : "654",
+		"Complemento" : null,
+		"Apelido" : "Casa II",
+		"UsuarioId" : 6,
+		"Bairro" : "Riachão de Baixo"
+	},
+	{
+		"Id" : 20,
+		"CEP" : "78552021",
+		"Estado" : "Mato Grosso",
+		"Cidade" : "Sinop",
+		"Logradouro" : "Rua dos Marfins",
+		"Numero" : "458",
+		"Complemento" : null,
+		"Apelido" : "Casa Mae",
+		"UsuarioId" : 6,
+		"Bairro" : "Jardim das Palmeiras"
+	},
+	{
+		"Id" : 22,
+		"CEP" : "59150480",
+		"Estado" : "Rio Grande do Norte",
+		"Cidade" : "Parnamirim",
+		"Logradouro" : "Rua Goianinha",
+		"Numero" : "661",
+		"Complemento" : null,
+		"Apelido" : "Escritorio I",
+		"UsuarioId" : 6,
+		"Bairro" : "Nova Parnamirim"
+	}
+]
